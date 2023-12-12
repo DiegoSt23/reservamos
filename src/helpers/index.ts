@@ -1,1 +1,1 @@
-export * from './CalculateMinAndMaxTemps';
+export * from './calculateMinAndMaxTemps';
