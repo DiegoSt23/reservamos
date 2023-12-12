@@ -24,7 +24,7 @@ export const SearchCard = ({
 }: SearchCardProps) => (
   <Card>
     <Typography style={{ textAlign: 'center' }}>
-      Enter the name of any city in Mexico and the United States to get the
+      Enter the name of any city in México and the United States to get the
       5-day weather forecast.
     </Typography>
     <form
@@ -48,7 +48,9 @@ export const SearchCard = ({
       </Button>
     </form>
     {errorMessage && (
-      <Typography style={{ textAlign: 'center', color: '#ed4071', marginTop: 20 }}>
+      <Typography
+        style={{ textAlign: 'center', color: '#ed4071', marginTop: 20 }}
+      >
         {errorMessage}
       </Typography>
     )}
