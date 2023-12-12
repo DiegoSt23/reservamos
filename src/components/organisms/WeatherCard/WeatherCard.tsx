@@ -55,14 +55,16 @@ export const WeatherCard = ({ data, weatherData, onClickClose, isLoading }: Weat
           <Typography variant='h3'>5 days forecast</Typography>
           <Card className={styles.forecastContainer}>
             {weatherData?.length
-              ? weatherData.slice(1).map((item, index) => (
+              ? weatherData.map((item, index) => (
                   <div key={index} className={styles.dayContainer}>
                     <div
                       className={styles.dayRowContainer}
                       style={{ justifyContent: 'center' }}
                     >
                       <Typography>
-                        {new Date(item.date).toLocaleDateString('en', {
+                        {new Date(
+                          item.date.replaceAll('-', '/')
+                        ).toLocaleDateString('en', {
                           weekday: 'long',
                           year: 'numeric',
                           month: 'long',
