@@ -52,6 +52,22 @@ export const ResultsTable = ({
     return 'transparent';
   };
 
+  const handleLabelPosition = (index: number) => {
+    if (!isMobile) {
+      return 'center';
+    }
+
+    if (index === 0) {
+      return 'left'
+    }
+
+    if (index === 1) {
+      return 'right';
+    }
+
+    return 'center';
+  };
+
   return (
     <Card
       title='Results'
@@ -80,9 +96,12 @@ export const ResultsTable = ({
           >
             <thead>
               <tr>
-                {labels.map((label) => (
+                {labels.map((label, index) => (
                   <th key={label}>
-                    <Typography variant='h3' style={{ textAlign: 'center' }}>
+                    <Typography
+                      variant='h3'
+                      style={{ textAlign: handleLabelPosition(index) }}
+                    >
                       {label}
                     </Typography>
                   </th>
@@ -102,7 +121,7 @@ export const ResultsTable = ({
                     <Typography
                       variant='h3'
                       style={{
-                        textAlign: 'center',
+                        textAlign: isMobile ? 'left' : 'center',
                         textDecoration:
                           currentValue && currentValue.id === item.id
                             ? 'underline'
@@ -143,15 +162,9 @@ export const ResultsTable = ({
                         disabled={isLoading}
                       >
                         {currentValue && currentValue.id === item.id ? (
-                          <Close
-                            width={20}
-                            height={20}
-                          />
+                          <Close width={20} height={20} />
                         ) : (
-                          <RightArrow
-                            width={25}
-                            height={25}
-                          />
+                          <RightArrow width={25} height={25} />
                         )}
                       </Button>
                     </div>

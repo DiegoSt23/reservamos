@@ -5,7 +5,6 @@ import {
   SearchCard,
   ResultsTable,
   WeatherCard,
-  Modal,
   ItemProps,
   WeatherDataProps,
 } from '../..';
@@ -127,8 +126,12 @@ export const Main = () => {
           <div
             className={styles.tableContainer}
             style={{
-              width:
-                !selectedData?.city || isMobile ? '100%' : 'calc(60% - 15px)',
+              width: !selectedData?.city
+                ? '100%'
+                : isMobile
+                ? '0%'
+                : 'calc(60% - 15px)',
+              opacity: selectedData?.city ? (!isMobile ? 1 : 0) : 1,
             }}
           >
             <ResultsTable
@@ -143,7 +146,11 @@ export const Main = () => {
           <div
             className={styles.weatherCardContainer}
             style={{
-              width: selectedData?.city ? 'calc(40% - 15px)' : '0%',
+              width: selectedData?.city
+                ? isMobile
+                  ? '100%'
+                  : 'calc(40% - 15px)'
+                : '0%',
               opacity: selectedData?.city ? 1 : 0,
             }}
           >
@@ -156,14 +163,6 @@ export const Main = () => {
           </div>
         </div>
       ) : null}
-      <Modal isOpen={!!selectedData?.city && isMobile} onClose={handleDeselectItem}>
-        <WeatherCard
-          data={selectedData}
-          onClickClose={handleDeselectItem}
-          weatherData={weatherData}
-          isLoading={isLoadingWeather}
-        />
-      </Modal>
     </div>
   );
 };
