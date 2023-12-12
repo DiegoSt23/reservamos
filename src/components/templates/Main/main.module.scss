@@ -9,19 +9,20 @@
   .subContainer {
     width: 100%;
     display: flex;
+    border-radius: 10px;
     justify-content: space-between;
     overflow: hidden;
 
     .tableContainer {
       transition: all linear 0.2s;
-      will-change: width, opacity;
+      will-change: width, transform;
       height: fit-content;
     }
 
     .weatherCardContainer {
       backdrop-filter: blur(20px);
       transition: all linear 0.2s;
-      will-change: width, opacity;
+      will-change: width, transform;
       height: fit-content;
     }
   }
