@@ -3,7 +3,7 @@
 .form {
   display: flex;
   gap: 5px;
-  margin: 20px 0px;
+  margin-top: 20px;
 
   @media screen and (max-width: $phone) {
     flex-direction: column;

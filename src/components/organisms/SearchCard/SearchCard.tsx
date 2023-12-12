@@ -48,7 +48,7 @@ export const SearchCard = ({
       </Button>
     </form>
     {errorMessage && (
-      <Typography style={{ textAlign: 'center', color: '#ed4071' }}>
+      <Typography style={{ textAlign: 'center', color: '#ed4071', marginTop: 20 }}>
         {errorMessage}
       </Typography>
     )}
