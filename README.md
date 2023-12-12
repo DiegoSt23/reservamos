@@ -1,4 +1,5 @@
 # Reservamos Weather Forecast
+A simple app to get the 5-day weather forecast of any city in México or the USA.
 
 ## How to run
 -Clone the repository
