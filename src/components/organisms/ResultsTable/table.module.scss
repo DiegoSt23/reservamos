@@ -17,7 +17,7 @@
     thead {
       tr {   
         th {  
-          padding: 20px 0px;
+          padding: 20px;
           background-color: #14121ab8;
         }
       }
@@ -28,7 +28,7 @@
         position: relative;
 
         td {
-          padding: 20px 0px;
+          padding: 20px;
           border-bottom: 1px solid $border;
           transition: background-color linear 0.2s;
         }
@@ -37,6 +37,10 @@
           width: 100%;
           display: flex;
           justify-content: center;
+
+          @media screen and (max-width: $large-tablet) {
+            justify-content: flex-end;
+          }
 
           .button {
             width: 30px;

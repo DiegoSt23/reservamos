@@ -13,8 +13,8 @@
     overflow: hidden;
 
     .tableContainer {
-      transition: width linear 0.2s;
-      will-change: width;
+      transition: all linear 0.2s;
+      will-change: width, opacity;
       height: fit-content;
     }
 
@@ -23,10 +23,6 @@
       transition: all linear 0.2s;
       will-change: width, opacity;
       height: fit-content;
-
-      @media screen and (max-width: $large-tablet) {
-        display: none;
-      }
     }
   }
 }
