@@ -122,7 +122,7 @@ export const Main = () => {
         onSearch={handleSearchCity}
         errorMessage={errorMessage}
       />
-      {data.length && (
+      {data.length ? (
         <div className={styles.subContainer}>
           <div
             className={styles.tableContainer}
@@ -155,7 +155,7 @@ export const Main = () => {
             />
           </div>
         </div>
-      )}
+      ) : null}
       <Modal isOpen={!!selectedData?.city && isMobile} onClose={handleDeselectItem}>
         <WeatherCard
           data={selectedData}
