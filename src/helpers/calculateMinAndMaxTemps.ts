@@ -10,10 +10,9 @@ export const calculateMinAndMaxTemps = (data: ForecastObjProps[]) => {
   // Create an object to store forecast data grouped by date
   const groupedByDate: { [date: string]: ForecastObjProps[] } = {};
 
-  // Loop through each forecast object
   data.forEach((forecast) => {
     // Extract the date from the forecast object
-    const date = forecast.dt_txt.split(' ')[0]; // Extract only the date part
+    const date = forecast.dt_txt.split(' ')[0];
 
     // Check if the date already exists in the groupedByDate object
     if (!groupedByDate[date]) {
@@ -31,23 +30,15 @@ export const calculateMinAndMaxTemps = (data: ForecastObjProps[]) => {
   // Calculate max and min temperatures for each day
   const maxMinTemperaturesByDay: { date: string; max: number; min: number }[] =
     resultArray.map((dayData) => {
-      let maxTemp = Number.MIN_VALUE;
-      let minTemp = Number.MAX_VALUE;
-      let currentDate = '';
-
-      dayData.forEach((forecast) => {
-        if (forecast.main.temp_max > maxTemp) {
-          maxTemp = forecast.main.temp_max;
-        }
-        if (forecast.main.temp_min < minTemp) {
-          minTemp = forecast.main.temp_min;
-        }
-        currentDate = forecast.dt_txt.split(' ')[0]; // Extract date from the forecast
-      });
+      const maxArr = dayData.map((item) => item.main.temp_max);
+      const minArr = dayData.map((item) => item.main.temp_min);
+      const maxTemp = Math.max(...maxArr);
+      const minTemp = Math.min(...minArr);
+      const currentDate = dayData[0].dt_txt.split(' ')[0];
 
       return { date: currentDate, max: maxTemp, min: minTemp };
     });
 
-  // Now resultArray contains an array of arrays, each inner array containing the forecast data for a single day
-  return maxMinTemperaturesByDay;
+  // We use slice since we don't want to show the current day
+  return maxMinTemperaturesByDay.slice(1);
 };
