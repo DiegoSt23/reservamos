@@ -62,9 +62,7 @@ export const WeatherCard = ({ data, weatherData, onClickClose, isLoading }: Weat
                       style={{ justifyContent: 'center' }}
                     >
                       <Typography>
-                        {new Date(
-                          item.date.replaceAll('-', '/')
-                        ).toLocaleDateString('en', {
+                        {new Date(item.date).toLocaleDateString('en', {
                           weekday: 'long',
                           year: 'numeric',
                           month: 'long',

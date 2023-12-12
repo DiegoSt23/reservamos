@@ -2,7 +2,7 @@ import { Typography } from '../..';
 import styles from './header.module.scss';
 
 export const Header = () => {
-  const date = new Date().toLocaleDateString(undefined, {
+  const date = new Date().toLocaleDateString('en', {
     weekday: 'short',
     year: 'numeric',
     month: 'short',
