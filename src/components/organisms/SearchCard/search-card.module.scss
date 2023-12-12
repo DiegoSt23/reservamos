@@ -1,0 +1,24 @@
+@import '../../../styles/variables.scss';
+
+.form {
+  display: flex;
+  gap: 5px;
+  margin: 20px 0px;
+
+  @media screen and (max-width: $phone) {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .searchButton {
+    width: 200px;
+
+    @media screen and (max-width: $large-tablet) {
+      width: 150px;
+    }
+
+    @media screen and (max-width: $phone) {
+      width: 100%;
+    }
+  }
+}

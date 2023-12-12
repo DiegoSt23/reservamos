@@ -1,0 +1,29 @@
+@import '../../../styles/variables.scss';
+
+@mixin heading-styles {
+  font-family: $roboto-mono;
+  color: $primary;
+  font-weight: 700;
+}
+
+.h1 {
+  @include heading-styles;
+  font-size: 26px;
+}
+
+.h2 {
+  @include heading-styles;
+  font-size: 20px
+}
+
+.h3 {
+  @include heading-styles;
+  font-size: 16px;
+}
+
+.paragraph {
+  font-family: $roboto;
+  font-weight: 400;
+  font-size: 14px;
+  color: $white;
+}
