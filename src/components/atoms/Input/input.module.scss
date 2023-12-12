@@ -1,0 +1,20 @@
+@import '../../../styles/variables.scss';
+
+.input {
+  width: 100%;
+  font-family: $red-hat;
+  font-size: 16px;
+  color: $white;
+  background-color: transparent;
+  outline: none;
+  border: solid 2px $border;
+  padding: 8px 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  border-bottom-left-radius: 2px;
+
+  &:focus {
+    border: solid 2px $primary;
+  }
+}

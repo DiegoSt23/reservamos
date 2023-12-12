@@ -1,0 +1,81 @@
+@import '../../../styles/variables.scss';
+
+.weatherCard {
+  height: 100%;
+
+  .closeButton {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: opacity linear 0.2s;
+
+    &:active {
+      opacity: 0.5;
+      transition: opacity linear 0.2s;
+    }
+  }
+
+  .cardContentMainContainer {
+    transition: height linear 0.2s;
+    overflow: hidden;
+    will-change: height;
+
+    .cardSubContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+
+      .row {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .forecastContainer {
+        flex-grow: 1;
+        overflow: auto;
+        padding: 20px;
+        gap: 10px;
+        overflow: hidden;
+        position: relative;
+
+        .dayContainer {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          padding: 10px 0px;
+          border-bottom: 1px solid $border;
+
+          &:first-child {
+            padding-top: 0px;
+          }
+
+          .dayRowContainer {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+        }
+
+        .spinnerContainer {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 20px;
+          background-color: #15141dc4;
+        }
+      }
+    }  
+  }
+}

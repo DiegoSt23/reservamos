@@ -1,0 +1,22 @@
+@import '../../../styles/variables.scss';
+
+.card {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: #14121a67;
+  backdrop-filter: blur(20px);
+  border: 1px solid #ffffff35;
+  text-align: left;
+  box-shadow: 0px 0px 15px #2727274d;
+
+  .headerContainer {
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+  }
+}

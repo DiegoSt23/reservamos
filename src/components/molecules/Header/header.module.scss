@@ -1,0 +1,37 @@
+@import '../../../styles/variables.scss';
+
+.headerMainContainer {
+  width: 100%; 
+
+  .subContainer {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-bottom: solid 1px $border;
+    padding: 15px 0px;
+
+    .titleContainer {
+      display: flex;
+      gap: 5px;
+
+      @media screen and (max-width: $phone) {
+        flex-direction: column;
+      }
+
+      .mainTitle {
+        color: $white;
+        font-size: 17px;
+        font-family: $roboto;
+        font-weight: 700;
+      }
+
+      .secondTitle {
+        color: $primary;
+        font-size: 17px;
+        font-family: $roboto;
+        font-weight: 700;
+      }
+    }
+  } 
+}
