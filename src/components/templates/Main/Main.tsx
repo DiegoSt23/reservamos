@@ -131,7 +131,12 @@ export const Main = () => {
                 : isMobile
                 ? '0%'
                 : 'calc(60% - 15px)',
-              opacity: selectedData?.city ? (!isMobile ? 1 : 0) : 1,
+
+              transform:
+                selectedData?.city && isMobile
+                  ? 'translateX(-100%)'
+                  : 'translateX(0%)',
+              opacity: isMobile && selectedData?.city ? 0 : 1,
             }}
           >
             <ResultsTable
@@ -151,6 +156,9 @@ export const Main = () => {
                   ? '100%'
                   : 'calc(40% - 15px)'
                 : '0%',
+              transform: selectedData?.city
+                ? 'translateX(0%)'
+                : 'translateX(100%)',
               opacity: selectedData?.city ? 1 : 0,
             }}
           >
