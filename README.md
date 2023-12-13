@@ -2,8 +2,7 @@
 A simple app to get the 5-day weather forecast of any city in México or the USA.
 
 ## How to run
--Clone the repository
--Set your node version to 18.0.0:
+-Clone the repository and set your node version to 18.0.0:
 ```
 nvm use 18.0.0
 ```
